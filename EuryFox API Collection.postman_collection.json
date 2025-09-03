@@ -1,0 +1,2151 @@
+{
+	"info": {
+		"_postman_id": "c851cacd-b0ce-4c79-9168-231e8b5397fe",
+		"name": "EuryFox API Collection",
+		"description": "Complete API collection for EuryFox e-commerce platform with categories, products, blog categories, and blogs management including image upload functionality",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33864157"
+	},
+	"item": [
+		{
+			"name": "Product Categories",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Health Caredd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nutritious and delicious snack options for a healthy lifestyle",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "Main category image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "icon",
+									"description": "Category icon image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "category",
+									"value": "ddd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-categories/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-categories",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-categories/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-categories",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-categories/getById/68af2ff51e795bfe4fb479ab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-categories",
+								"getById",
+								"68af2ff51e795bfe4fb479ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Deepak POrwaldd",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Premium quality nutritious snacks for health-conscious consumers",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "Optional: New category image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Downloads/1743069323744.jpeg"
+								},
+								{
+									"key": "icon",
+									"description": "Optional: New category icon",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Downloads/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "id",
+									"value": "68af3e133d886d05ac8ef977",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-categories/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-categories",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-categories/68afeee58f6465ac36ed994d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-categories",
+								"68afeee58f6465ac36ed994d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Deepak",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000.4",
+									"type": "text"
+								},
+								{
+									"key": "originalPrice",
+									"value": "15.99",
+									"type": "text"
+								},
+								{
+									"key": "unitId",
+									"value": "68b01e1553ed4ac90c5295e1",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "68b1a0e9d49a718e1ceec4aa",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4.5",
+									"type": "text"
+								},
+								{
+									"key": "reviews",
+									"value": "128",
+									"type": "text"
+								},
+								{
+									"key": "inStock",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "stockCount",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Premium organic almonds, rich in protein and healthy fats",
+									"type": "text"
+								},
+								{
+									"key": "longDescription",
+									"value": "Our organic almonds are sourced from the finest farms and are packed with essential nutrients. They make a perfect snack for any time of the day and are great for maintaining a healthy lifestyle.",
+									"type": "text"
+								},
+								{
+									"key": "features[0]",
+									"value": "100% Organic",
+									"type": "text"
+								},
+								{
+									"key": "features[1]",
+									"value": "Rich in Protein",
+									"type": "text"
+								},
+								{
+									"key": "features[2]",
+									"value": "No Added Preservatives",
+									"type": "text"
+								},
+								{
+									"key": "features[3]",
+									"value": "Gluten Free",
+									"type": "text"
+								},
+								{
+									"key": "specifications[weight]",
+									"value": "250g",
+									"type": "text"
+								},
+								{
+									"key": "specifications[origin]",
+									"value": "California",
+									"type": "text"
+								},
+								{
+									"key": "specifications[shelfLife]",
+									"value": "12 months",
+									"type": "text"
+								},
+								{
+									"key": "specifications[storage]",
+									"value": "Cool, dry place",
+									"type": "text"
+								},
+								{
+									"key": "benefits[0]",
+									"value": "Heart Healthy",
+									"type": "text"
+								},
+								{
+									"key": "benefits[1]",
+									"value": "Good Source of Vitamin E",
+									"type": "text"
+								},
+								{
+									"key": "benefits[2]",
+									"value": "Supports Weight Management",
+									"type": "text"
+								},
+								{
+									"key": "benefits[3]",
+									"value": "Boosts Brain Function",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg",
+										"/C:/Users/Lenovo/Videos/Captures/1742909166051.jpeg",
+										"/C:/Users/Lenovo/Videos/Captures/1743069323744.jpeg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Neha Cool",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "originalPrice",
+									"value": "15.99",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "unitId",
+									"value": "68af4958a39c8f001eeec4aa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "68af3e1b3d886d05ac8ef97a",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "currencyId",
+									"value": "{{currencyId}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "4.1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "reviews",
+									"value": "128",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "inStock",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stockCount",
+									"value": "50",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "discount",
+									"value": "20%",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Premium organic almonds, rich in protein and healthy fats",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "longDescription",
+									"value": "Our organic almonds are sourced from the finest farms and are packed with essential nutrients. They make a perfect snack for any time of the day and are great for maintaining a healthy lifestyle.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[0]",
+									"value": "100% Organic",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[1]",
+									"value": "Rich in Protein",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[2]",
+									"value": "No Added Preservatives",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "features[3]",
+									"value": "Gluten Free",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[weight]",
+									"value": "250g",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[origin]",
+									"value": "California",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[shelfLife]",
+									"value": "12 months",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "specifications[storage]",
+									"value": "Cool, dry place",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[0]",
+									"value": "Heart Healthy",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[1]",
+									"value": "Good Source of Vitamin E",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[2]",
+									"value": "Supports Weight Management",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits[3]",
+									"value": "Boosts Brain Function",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "68b5369c1aebcac9a7cd561b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Product Images",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "id",
+									"value": "68afc87a6fa88800ce1c4ba6",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Neha Cool",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/addImages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"addImages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product by ID (Full Details)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/getById/68afc87a6fa88800ce1c4ba6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"getById",
+								"68afc87a6fa88800ce1c4ba6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ByCategory Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/getByCategory/68af3e1b3d886d05ac8ef97a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"getByCategory",
+								"68af3e1b3d886d05ac8ef97a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/68afc87a6fa88800ce1c4ba6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"68afc87a6fa88800ce1c4ba6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products with category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/products/getAllProductsWithCategories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"products",
+								"getAllProductsWithCategories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog Categories",
+			"item": [
+				{
+					"name": "add Blogs Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Importance of today\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs-category/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs-category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blog Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"68b12142b91796175a3757f6\",\r\n    \"name\":\"Importance of today\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs-category/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs-category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Blogs CategoryBy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs-category/getById/68b12142b91796175a3757f6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs-category",
+								"getById",
+								"68b12142b91796175a3757f6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Blog Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs-category/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs-category",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs-category/getAllCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs-category",
+								"getAllCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs-category/68b401e12451473fef5bacd1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs-category",
+								"68b401e12451473fef5bacd1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "add Blog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Daily Newsss",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "10 Healthy Snacking Tips for Better Nutrition",
+									"type": "text"
+								},
+								{
+									"key": "excerpt",
+									"value": "Discover simple yet effective tips to make your snacking habits healthier and more nutritious.",
+									"type": "text"
+								},
+								{
+									"key": "content[0][heading]",
+									"value": "Introduction to Cybersecurity",
+									"description": "in array form of heading and para",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Dr. Sarah Johnson",
+									"type": "text"
+								},
+								{
+									"key": "authorRole",
+									"value": "Nutritionist",
+									"type": "text"
+								},
+								{
+									"key": "readTime",
+									"value": "8 min read",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "68b12142b91796175a3757f6",
+									"type": "text"
+								},
+								{
+									"key": "tags[0]",
+									"value": "nutrition",
+									"type": "text"
+								},
+								{
+									"key": "views",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "likes",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "comments",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "featured",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "authorImage",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg"
+								},
+								{
+									"key": "content[0][para]",
+									"value": "Cybersecurity is essential for protecting sensitive information and systems from threats.",
+									"type": "text"
+								},
+								{
+									"key": "tags[1]",
+									"value": "\"healthy eating",
+									"type": "text"
+								},
+								{
+									"key": "tags[2]",
+									"value": "snacks wellness",
+									"type": "text"
+								},
+								{
+									"key": "content[1][heading]",
+									"value": "Ujjain News ",
+									"type": "text"
+								},
+								{
+									"key": "content[1][para]",
+									"value": "Ujjain is the city of Gods",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blogs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Kunall",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "title",
+									"value": "Mohit",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "excerpt",
+									"value": "Discover simple yet effective tips to make your snacking habits healthier and more nutritious.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "content[0][heading]",
+									"value": "Introduction to Cybersecurity",
+									"description": "in array form of heading and para",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "author",
+									"value": "Dr. Sarah Johnson",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "authorRole",
+									"value": "Nutritionist",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "readTime",
+									"value": "8 min read",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "68b12164b91796175a3757fa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[0]",
+									"value": "nutrition",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "views",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "likes",
+									"value": "10",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comments",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "featured",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png",
+									"disabled": true
+								},
+								{
+									"key": "authorImage",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "content[0][para]",
+									"value": "Cybersecurity is essential for protecting sensitive information and systems from threats.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[1]",
+									"value": "\"healthy eating",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags[2]",
+									"value": "snacks wellness",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "68b40dd6c4f9ddd5feeec4b4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Blog By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/getById/68b31ebfea08b8ef8f130a66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"getById",
+								"68b31ebfea08b8ef8f130a66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Blog By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/getByName/benefits-of-regular-exercise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"getByName",
+								"benefits-of-regular-exercise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Featured Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/getFeatured",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"getFeatured"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/getAllActive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"getAllActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/getByCategory/68b12164b91796175a3757fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"getByCategory",
+								"68b12164b91796175a3757fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/blogs/68b31e9eea08b8ef8f130a5e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"blogs",
+								"68b31e9eea08b8ef8f130a5e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Info",
+			"item": [
+				{
+					"name": "add contact Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"mobileNumber\": \"9109611141\",\n  \"infoEmail\": \"info@company.com\",\n  \"salesEmail\": \"sales@company.com\",\n  \"supportEmail\": \"support@company.com\",\n  \"officeAddress\": [\n    \"123 Business Street\",\n    \"Suite 456\",\n    \"New York, NY 10001\",\n    \"United States\"\n  ],\n  \"phoneNumbers\": [\n    \"+1-555-0123\",\n    \"+1-555-0124\",\n    \"+1-800-34333\"\n  ],\n  \"emails\": [\n    \"info@company.com\",\n    \"sales@company.com\",\n    \"support@company.com\",\n    \"admin@company.com\"\n  ],\n  \"businessHours\": [\n    \"Monday: 9:00 AM - 6:00 PM\",\n    \"Tuesday: 9:00 AM - 6:00 PM\",\n    \"Wednesday: 9:00 AM - 6:00 PM\",\n    \"Thursday: 9:00 AM - 6:00 PM\",\n    \"Friday: 9:00 AM - 6:00 PM\",\n    \"Saturday: 10:00 AM - 4:00 PM\",\n    \"Sunday: Closed\"\n  ],\n    \"latitude\": 23.232541,\n    \"longitude\": 75.809854,\n  \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/contact-info/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"contact-info",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"68b51feec367e8b28b284c04\",\n  \"businessHours\": [\n    \"Monday--Friday: 8:00 AM - 7:00 PM\",\n    \"Saturday: 10:00 AM - 5:00 PM\",\n    \"Sunday: 12:00 PM - 4:00 PM\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/contact-info/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"contact-info",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Contact Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/contact-info/getActive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"contact-info",
+								"getActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Contact Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/contact-info/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"contact-info",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/contact-info/getById/68afddbe6cb84559a7a22c7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"contact-info",
+								"getById",
+								"68afddbe6cb84559a7a22c7f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Contact Info",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/contact-info/68afe2ee617b61ecf6dfda7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"contact-info",
+								"68afe2ee617b61ecf6dfda7e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team Members",
+			"item": [
+				{
+					"name": "add team members",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('teamMemberId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "John Smith",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "CEO & Founder",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "John is the visionary behind EuryFox, with over 15 years of experience in the health and wellness industry. He is passionate about making healthy living accessible to everyone.",
+									"type": "text"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/1719033605073.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/team-members/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"team-members",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upate Team member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "John is the visionary behind EuryFox, with over 20 years of experience in the health and wellness industry. He is passionate about making healthy living accessible to everyone through innovative products and services.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Lenovo/Videos/Captures/Gemini_Generated_Image_lbt6uelbt6uelbt6.png"
+								},
+								{
+									"key": "id",
+									"value": "68aff2b181d33a7c8ac313da",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Mohit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/team-members/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"team-members",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Team Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/team-members/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"team-members",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active Team Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/team-members/getActive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"team-members",
+								"getActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team Member by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/team-members/getById/68aff2b181d33a7c8ac313da",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"team-members",
+								"getById",
+								"68aff2b181d33a7c8ac313da"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team Member",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/team-members/68aff22e81d33a7c8ac313d5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"team-members",
+								"68aff22e81d33a7c8ac313d5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currencies",
+			"item": [
+				{
+					"name": "add Currency",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('currencyId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \"name\": \"sddf\",\n  \"flag\": \"4a3\",\n  \"currency\": \"sdfg\",\n  \"rate\": \"1\",\n  \"symbol\": \"$\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/currencies/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"currencies",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Currency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n  \n            \"name\": \"Indian\",\n            \"flag\": \"IN\",\n            \"currency\": \"INR\",\n            \"rate\": \"1\",\n            \"symbol\": \"₹\",\n            \"id\": \"68b00f57024ee29ca079be72\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/currencies/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"currencies",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/currencies/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"currencies",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Currency by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/currencies/getById/68b00f57024ee29ca079be72",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"currencies",
+								"getById",
+								"68b00f57024ee29ca079be72"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Currency",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/currencies/68b00f57024ee29ca079be72",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"currencies",
+								"68b00f57024ee29ca079be72"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Units",
+			"item": [
+				{
+					"name": "add Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('productUnitId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Pieces\",\n  \"code\": \"PC\",\n  \"type\": \"Box\",\n  \"description\": \"Standard unit of mass in the metric system\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-units/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-units",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n                \"name\": \"Pieces\",\n            \"code\": \"PC\",\n            \"type\": \"Box\",\n            \"description\": \"Standard unit of mass in the metric system\",\n            \"id\": \"68b01e1553ed4ac90c5295e1\"\n        }"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-units/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-units",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product Units",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-units/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-units",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Unit by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-units/getById/68b01e7553ed4ac90c5295e5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-units",
+								"getById",
+								"68b01e7553ed4ac90c5295e5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product Unit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/product-units/68b01e7553ed4ac90c5295e5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"product-units",
+								"68b01e7553ed4ac90c5295e5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Unit Quantities",
+			"item": [
+				{
+					"name": "add Unit quantities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201 && pm.response.json().data) {",
+									"    pm.globals.set('unitQuantityId', pm.response.json().data._id);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"unitId\": \"68b01e1553ed4ac90c5295e5\",\n  \"quantities\": [\n    {\n      \"value\": \"250g\",\n      \"label\": \"250 grams\",\n      \"multiplier\": 0.25\n    },\n    {\n      \"value\": \"500g\",\n      \"label\": \"500 grams\",\n      \"multiplier\": 0.5\n    },\n    {\n      \"value\": \"1kg\",\n      \"label\": \"1 kilogram\",\n      \"multiplier\": 1\n    },\n    {\n      \"value\": \"2kg\",\n      \"label\": \"2 kilograms\",\n      \"multiplier\": 2\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/unit-quantities/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"unit-quantities",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Unit Quantity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"quantities\": [\n            {\n                \"value\": \"250g\",\n                \"label\": \"250 grams\",\n                \"multiplier\": 0.25\n            }\n        ],\n  \"unitId\": \"68b53de1b15c8fc17680d281\",\n        \"id\": \"68b53de1b15c8fc17680d281\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/unit-quantities/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"unit-quantities",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Unit Quantities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/unit-quantities/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"unit-quantities",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/unit-quantities/getbyid/68b02ee94528a46b2de171e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"unit-quantities",
+								"getbyid",
+								"68b02ee94528a46b2de171e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Unit Qunatities",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/eury/fox/unit-quantities/68b02ee94528a46b2de171e8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"eury",
+								"fox",
+								"unit-quantities",
+								"68b02ee94528a46b2de171e8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Set dynamic variables if needed",
+					"// pm.globals.set('timestamp', new Date().toISOString());"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Global test scripts",
+					"pm.test('Response time is less than 2000ms', function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});",
+					"",
+					"pm.test('Response has valid JSON', function () {",
+					"    pm.response.to.have.jsonBody();",
+					"});",
+					"",
+					"// Auto-save IDs for chaining requests",
+					"if (pm.response.code === 201 && pm.response.json().data) {",
+					"    const responseData = pm.response.json().data;",
+					"    if (responseData._id) {",
+					"        if (pm.request.url.path.includes('categories') && !pm.request.url.path.includes('blog-categories')) {",
+					"            pm.globals.set('categoryId', responseData._id);",
+					"        } else if (pm.request.url.path.includes('products')) {",
+					"            pm.globals.set('productId', responseData._id);",
+					"        } else if (pm.request.url.path.includes('blog-categories')) {",
+					"            pm.globals.set('blogCategoryId', responseData._id);",
+					"        } else if (pm.request.url.path.includes('blogs')) {",
+					"            pm.globals.set('blogId', responseData._id);",
+					"        }",
+					"    }",
+					"}"
+				]
+			}
+		}
+	]
+}
