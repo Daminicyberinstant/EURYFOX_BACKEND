@@ -32,7 +32,7 @@ app.use(helmet());
 
 
 app.use(cors({
-  origin:[ 'http://localhost:3000','http://localhost:5173'],
+  origin:[ 'http://localhost:3000','http://localhost:5173','https://eury-fox-admin.vercel.app','https://eury-fox-7k1j.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));

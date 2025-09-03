@@ -140,22 +140,18 @@ db.createCollection("contact_info", {
         infoEmail: { bsonType: "string" },
         salesEmail: { bsonType: "string" },
         supportEmail: { bsonType: "string" },
-
         officeAddress: {
           bsonType: "array",
           items: { bsonType: "string" }
         },
-
         phoneNumbers: {
           bsonType: "array",
           items: { bsonType: "string" }
         },
-
         emails: {
           bsonType: "array",
           items: { bsonType: "string" }
         },
-
         businessHours: {
           bsonType: "array",
           items: { bsonType: "string" }
@@ -182,7 +178,6 @@ db.createCollection("team_members", {
         role: { bsonType: "string" },
         image: { bsonType: "string" },
         description: { bsonType: "string" },
-        
         isActive: { bsonType: "bool" } 
       }
     }
