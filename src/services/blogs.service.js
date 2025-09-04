@@ -101,9 +101,7 @@ const getAll = async () => {
     .populate("categoryId", "name category")
     .sort({ createdAt: -1 }); // Optional: newest first
 
-  if (!blogs || blogs.length === 0) {
-    throw new CustomError("No blogs found", statusCode.NOT_FOUND);
-  }
+  
 
   return blogs;
 };
