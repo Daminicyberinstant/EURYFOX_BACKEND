@@ -446,14 +446,10 @@ const getAllThomps = async () => {
   const thompsProducts = await Product.find({ thomps: true })
     .sort({ createdAt: -1 }) // optional: newest first
     .populate("categoryId", "title category")
-    .populate("unitId", "name code type")
-    .select(
-      "name price originalPrice images rating inStock description bestSellingProducts signatureFlavorsProducts categoryId unitId"
-    ); // only select required fields
+    .populate("unitId", "name code type");
 
   return thompsProducts;
 };
-
 
 module.exports = {
   add,
