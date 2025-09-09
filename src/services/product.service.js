@@ -237,6 +237,9 @@ if(body.unitId && body.unitId !== String(product.unitId) )
       "features",
       "benefits",
       "specifications",
+      "thomps",
+      "bestSellingProducts",
+      "signatureFlavorsProducts"
     ];
 
     fields.forEach(f => {
