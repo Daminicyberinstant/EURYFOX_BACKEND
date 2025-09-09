@@ -46,6 +46,9 @@ const createProduct = Joi.object({
   discount: Joi.string().optional().allow(null, ""),
   rating: Joi.number().min(0).max(5).optional(),
   reviews: Joi.number().integer().min(0).optional(),
+  thomps: Joi.boolean().optional(),
+bestSellingProducts: Joi.boolean().optional(),
+signatureFlavorsProducts: Joi.boolean().optional(),
 });
 
 // --------------------- Update Product ---------------------
@@ -71,6 +74,10 @@ const updateProduct = Joi.object({
   discount: Joi.string().optional().allow(null, ""),
   rating: Joi.number().min(0).max(5).optional(),
   reviews: Joi.number().integer().min(0).optional(),
+  thomps: Joi.boolean().optional(),
+bestSellingProducts: Joi.boolean().optional(),
+signatureFlavorsProducts: Joi.boolean().optional(),
+
 });
 
 // --------------------- Get Product by ID ---------------------

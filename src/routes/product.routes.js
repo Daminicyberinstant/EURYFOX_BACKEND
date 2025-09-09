@@ -33,6 +33,7 @@ router.get(
 
 router.get("/getAll", productController.getAll);
 router.get("/getAllProductsWithCategories", productController.getAllProductsWithCategories);
+router.get("/getAllThomps", productController.getThomps);
 
 router.delete(
   "/:id",

@@ -108,7 +108,7 @@ db.createCollection("products", {
           description: "List of benefits", 
           items: { bsonType: "string" }
         }
-      }
+      },
     }
   }
 })
@@ -444,3 +444,99 @@ db.products.insertMany([
     benefits: ["Great for fitness", "Quick energy supply"]
   }
 ]);
+
+
+
+-- update products table
+db.runCommand({
+  collMod: "products",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "price", "unitId", "inStock", "categoryId"], // thomps is NOT required
+      properties: {
+        name: { 
+          bsonType: "string", 
+          description: "Name of the product is required"
+        },
+        price: { 
+          bsonType: "string", 
+          description: "Price must be a string (e.g., '199.99')" 
+        },
+        originalPrice: { 
+          bsonType: ["string", "null"], 
+          description: "Optional original price before discount" 
+        },
+        unitId:{
+          bsonType: "objectId", 
+          description: "Reference to product unit" 
+        },
+        categoryId: { 
+          bsonType: "objectId", 
+          description: "Reference to categories collection" 
+        },
+        images: { 
+          bsonType: "array", 
+          description: "List of product image URLs", 
+          items: { bsonType: "string" }
+        },
+        rating: { 
+          bsonType: "double", 
+          description: "Average customer rating (0.0 - 5.0)" 
+        },
+        reviews: { 
+          bsonType: "int", 
+          description: "Total number of customer reviews" 
+        },
+        inStock: { 
+          bsonType: "bool", 
+          description: "Availability of the product" 
+        },
+        stockCount: { 
+          bsonType: "int", 
+          description: "Number of items in stock" 
+        },
+        discount: { 
+          bsonType: ["string", "null"], 
+          description: "Discount info (e.g., '10%')" 
+        },
+        description: { 
+          bsonType: ["string", "null"], 
+          description: "Short description of the product" 
+        },
+        longDescription: { 
+          bsonType: ["string", "null"], 
+          description: "Detailed product description" 
+        },
+        features: { 
+          bsonType: "array", 
+          description: "List of product features", 
+          items: { bsonType: "string" }
+        },
+        specifications: { 
+          bsonType: "object", 
+          description: "Technical specifications in key-value format" 
+        },
+        benefits: { 
+          bsonType: "array", 
+          description: "List of benefits", 
+          items: { bsonType: "string" }
+        },
+        
+        thomps: {
+          bsonType: "bool",
+          description: "Indicates if Thomps features are enabled (optional)"
+        },
+        bestSellingProducts: { 
+          bsonType: "bool",
+          description: "Indicates if this is a best-selling product; relevant only when thomps is true"
+        },
+        signatureFlavorsProducts: { 
+          bsonType: "bool",
+          description: "Indicates if signature product flavors are enabled; relevant only when thomps is true"
+        }
+      }
+    }
+  },
+  validationLevel: "moderate"
+});

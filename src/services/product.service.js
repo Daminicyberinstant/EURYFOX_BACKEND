@@ -437,6 +437,19 @@ const getByCategoryId = async (categoryId) => {
 
 
 
+// Get all Thomps-enabled products
+const getAllThomps = async () => {
+  // Fetch products where thomps is true
+  const thompsProducts = await Product.find({ thomps: true })
+    .sort({ createdAt: -1 }) // optional: newest first
+    .populate("categoryId", "title category")
+    .populate("unitId", "name code type")
+    .select(
+      "name price originalPrice images rating inStock description bestSellingProducts signatureFlavorsProducts categoryId unitId"
+    ); // only select required fields
+
+  return thompsProducts;
+};
 
 
 module.exports = {
@@ -446,5 +459,5 @@ module.exports = {
   update,
   remove,
   getCategoriesWithProducts,
-  addImages,getByCategoryId
+  addImages,getByCategoryId,getAllThomps
 };

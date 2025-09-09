@@ -52,8 +52,8 @@ const ensureDir = (dir) => {
 const PROJECT_ROOT = process.cwd();
 
 // Upload folder outside project (same level)
-//const UPLOADS_ROOT = path.join(PROJECT_ROOT, "..", "uploads"); for local  for server use this second one
-const UPLOADS_ROOT = path.join(PROJECT_ROOT, "uploads");
+const UPLOADS_ROOT = path.join(PROJECT_ROOT, "..", "uploads");// for local  for server use this
+// //const UPLOADS_ROOT = path.join(PROJECT_ROOT, "uploads");// for main server use this 
 
 
 

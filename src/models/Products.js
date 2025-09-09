@@ -79,6 +79,18 @@ const productSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Currency",
     },
+     thomps: {
+      type: Boolean,
+      default: false,
+    },
+    bestSellingProducts: {
+      type: Boolean,
+      default: false,
+    },
+    signatureFlavorsProducts: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true,
      collection: "products", // enforce exact collection name

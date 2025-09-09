@@ -185,6 +185,26 @@ const getByCategory = async (req, res) => {
 };
 
 
+const getThomps = async (req, res) => {
+  try {
+    const thompsProducts = await productService.getAllThomps();
+    return res.status(statusCode.OK).json(apiResponse({
+      success: true,
+      isException: false,
+      statusCode: statusCode.OK,
+      result: thompsProducts,
+      message: "Thomps products fetched successfully",
+    }));
+  } catch (error) {
+    return res.status(500).json(apiResponse({
+      success: false,
+      isException: true,
+      statusCode: 500,
+      result: null,
+      message: error.message || "Something went wrong while fetching Thomps products",
+    }));
+  }
+};
 
 
 
@@ -196,5 +216,8 @@ module.exports = {
   remove,
   getAllProductsWithCategories,
   addProductImages,
-  getByCategory
+  getByCategory,getThomps
 };
+
+
+
