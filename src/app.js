@@ -18,6 +18,7 @@ const productUnitsRoutes=require("./routes/productUnits.routes.js");
 const unitQunatitiesRoutes=require("./routes/unitQuantities.routes.js")
 const blogsCategoryRoutes=require("./routes/blogsCategory.routes.js");
 const blogsRoutes=require("./routes/blogs.routes.js")
+const usersRoutes=require("./routes/users.routes.js");
 
 const app = express();
 
@@ -65,6 +66,7 @@ app.use("/eury/fox/product-units",productUnitsRoutes);
 app.use("/eury/fox/unit-quantities",unitQunatitiesRoutes)
 app.use("/eury/fox/blogs-category",blogsCategoryRoutes);
 app.use("/eury/fox/blogs",blogsRoutes);
+app.use("/eury/fox/users",usersRoutes);
 
 app.use(notFound);
 

@@ -540,3 +540,36 @@ db.runCommand({
   },
   validationLevel: "moderate"
 });
+
+
+
+
+
+
+db.createCollection("users", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["emailAddress"],
+      properties: {
+        fullName: { 
+          bsonType: "string", 
+          description: "Full name of the user" 
+        },
+        emailAddress: { 
+          bsonType: "string", 
+          description: "Email address of the user"
+        },
+        mobileNumber: { 
+          bsonType: "string", 
+          description: "Mobile number of the user"
+        },
+        address: { 
+          bsonType: "string", 
+          description: "Address of the user"
+        }
+      }
+    }
+  }
+});
+db.users.createIndex({ emailAddress: 1 }, { unique: true });

@@ -84,6 +84,31 @@ const getById = async (id) => {
 const getActive = async () => {
   try {
     const contactInfo = await ContactInfo.findOne({ isActive: true });
+
+  console.log("Before businessHours : ", contactInfo);
+    if (contactInfo && Array.isArray(contactInfo.officeAddress)) {
+      contactInfo.officeAddress = formatOfficeAddress(contactInfo.officeAddress);
+    }
+
+
+    if (contactInfo && Array.isArray(contactInfo.businessHours)) {
+      // Convert array to object
+      const officeHours = {};
+      contactInfo.businessHours.forEach(entry => {
+        const parts = entry.split(":");
+        const day = parts[0].trim();
+        const time = parts.slice(1).join(":").trim(); // Handle multiple colons
+        officeHours[day] = time;
+      });
+
+      // Add formatted version without overwriting original
+      contactInfo.businessHours = formatOfficeHours(officeHours);
+    }
+
+    console.log("Get Active Hours got called After : ", contactInfo);
+
+
+    
     return contactInfo;
   } catch (error) {
     throw new CustomError(error.message || "Failed to fetch active contact info", statusCode.INTERNAL_SERVER_ERROR);
@@ -106,4 +131,47 @@ module.exports = {
   getById,
   getActive,
   getAll,
+};
+
+const formatOfficeAddress = (addressArray) => {
+  if (!Array.isArray(addressArray)) return [];
+
+  return [
+    addressArray[0] || "",
+        [addressArray[1], addressArray[2]].filter(Boolean).join(", ") + (addressArray[3] ? " " + addressArray[3] : ""),
+    [addressArray[4], addressArray[5]].filter(Boolean).join(", ")
+  ];
+};
+const formatOfficeHours = (officeHours) => {
+  const daysOrder = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
+
+  const hours = daysOrder.map(day => ({ day, time: officeHours[day] || "Closed" }));
+
+  const groups = [];
+  let currentGroup = { start: hours[0].day, end: hours[0].day, time: hours[0].time };
+
+  for (let i = 1; i < hours.length; i++) {
+    const { day, time } = hours[i];
+    if (time === currentGroup.time) {
+      currentGroup.end = day;
+    } else {
+      groups.push({ ...currentGroup });
+      currentGroup = { start: day, end: day, time };
+    }
+  }
+  groups.push({ ...currentGroup });
+
+  return groups.map(group => {
+    const { start, end, time } = group;
+    const dayRange = start === end ? start : `${start}-${end}`;
+    return `${dayRange} : ${time}`;
+  });
 };
