@@ -33,14 +33,14 @@ app.use(helmet());
 
 
 app.use(cors({
-  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com','http://localhost:5173'],
+  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com','http://localhost:5173','http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,
 }));
 
-app.use(express.json({ limit: '2mb' }));
-app.use(express.urlencoded({ extended: true, limit: '2mb' }));
+app.use(express.json({ limit: '12mb' }));
+app.use(express.urlencoded({ extended: true, limit: '12mb' }));
 
 
 
