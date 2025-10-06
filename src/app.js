@@ -33,8 +33,9 @@ app.use(helmet());
 
 
 app.use(cors({
-  origin:[ 'http://localhost:3000','http://localhost:5173','https://eury-fox-admin.vercel.app','https://eury-fox-7k1j.vercel.app'],
+  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,
 }));
 
