@@ -33,7 +33,7 @@ app.use(helmet());
 
 
 app.use(cors({
-  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com'],
+  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com','http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,

@@ -4,7 +4,7 @@ const CustomError  = require('../exceptions/CustomError');
 const fs = require("fs");
 const path = require("path");
 const {UPLOADS_ROOT}=require("../middlewares/upload");
-const Product = require("../models/Products"); // make sure to import Product model
+const Product = require("../models/Products");
 const mongoose = require("mongoose");
 const add = async (req, res) => {
   const uploadedFiles = [];
@@ -196,14 +196,16 @@ const remove = async (id) => {
   }
 
   // Delete icon file
-  if (category.icon) {
-    const iconFullPath = path.join(UPLOADS_ROOT, category.icon);
+ if (category.icon) {
+    const relativePath = category.icon.replace(/^uploads[\\/]/, "");
+    const iconFullPath = path.join(UPLOADS_ROOT,relativePath );
     try {
       if (fs.existsSync(iconFullPath)) fs.unlinkSync(iconFullPath);
     } catch (err) {
       console.error("Failed to delete icon:", iconFullPath, err);
     }
   }
+
 
   // Delete category document from DB
   const deletedCategory = await ProductCategories.findByIdAndDelete(id);
