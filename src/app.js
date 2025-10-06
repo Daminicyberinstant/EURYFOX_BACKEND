@@ -38,12 +38,9 @@ app.use(cors({
   credentials: true,
 }));
 
-app.use(express.json({ limit: '1mb' }));
-app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+app.use(express.json({ limit: '2mb' }));
+app.use(express.urlencoded({ extended: true, limit: '2mb' }));
 
-
-// Serve static files from the uploads folder
-// app.use("/eury/fox/uploads", express.static(UPLOADS_ROOT));
 
 
 app.use("/eury/fox/uploads", express.static(UPLOADS_ROOT, {

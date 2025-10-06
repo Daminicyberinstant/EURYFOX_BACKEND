@@ -27,10 +27,11 @@ const add = async (req, res) => {
       const iconFullPath = path.join(UPLOADS_ROOT, "productCategories", "icons", files.icon[0].filename);
       uploadedFiles.push(iconFullPath);
     }
-
+console.log("the product Category");
     // Check if category title exists
     const existingCategory = await ProductCategories.findOne({ title: data.title });
     if (existingCategory) {
+      console.log("Product Cateogyr already Exists : ");
       throw new CustomError("Product category already exists", statusCode.BAD_REQUEST);
     }
 
