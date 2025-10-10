@@ -19,6 +19,7 @@ const unitQunatitiesRoutes=require("./routes/unitQuantities.routes.js")
 const blogsCategoryRoutes=require("./routes/blogsCategory.routes.js");
 const blogsRoutes=require("./routes/blogs.routes.js")
 const usersRoutes=require("./routes/users.routes.js");
+const adminRoutes=require("./routes/admin.routes.js");
 
 const app = express();
 
@@ -33,7 +34,7 @@ app.use(helmet());
 
 
 app.use(cors({
-  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com','http://localhost:5173','http://localhost:3000'],
+  origin:[ 'https://www.euryfox.com','https://euryfox.com','https://admin.euryfox.com','https://www.admin.euryfox.com','http://localhost:5173','http://localhost:3000','http://10.218.175.85:4000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,
@@ -65,7 +66,7 @@ app.use("/eury/fox/unit-quantities",unitQunatitiesRoutes)
 app.use("/eury/fox/blogs-category",blogsCategoryRoutes);
 app.use("/eury/fox/blogs",blogsRoutes);
 app.use("/eury/fox/users",usersRoutes);
-
+app.use("/eury/fox/admin",adminRoutes);
 app.use(notFound);
 
 app.use(errorHandler);
