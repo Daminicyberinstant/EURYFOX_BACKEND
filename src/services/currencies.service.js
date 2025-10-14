@@ -21,6 +21,7 @@ console.log("Data code : ",data.code);
       ],
     });
     
+
     if (existing) {
       throw new CustomError(
         "Currency, name, or flag already exists",
@@ -78,6 +79,7 @@ const update = async (data) => {
       if (key !== "id") currency[key] = data[key];
     });
   
+    
     const updatedCurrency = await currency.save();
     return updatedCurrency;
   } catch (error) {

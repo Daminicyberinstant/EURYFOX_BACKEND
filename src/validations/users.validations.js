@@ -3,7 +3,7 @@ const Joi = require("joi");
 const idParam = Joi.string().hex().length(24).label("MongoId");
 
 const addUser = Joi.object({
-  fullName: Joi.string().min(2).max(100).optional().trim().messages({
+  fullName: Joi.string().optional().trim().messages({
     "string.min": "Full name must be at least 2 characters long",
     "string.max": "Full name cannot exceed 100 characters",
   }),
@@ -12,11 +12,11 @@ const addUser = Joi.object({
     "string.email": "Email address must be a valid email",
     "any.required": "Email address is required",
   }),
-  mobileNumber: Joi.string().min(5).max(20).optional().trim().messages({
+  mobileNumber: Joi.string().optional().allow('').trim().messages({
     "string.min": "Mobile number must be at least 5 characters long",
     "string.max": "Mobile number cannot exceed 20 characters",
   }),
-  address: Joi.string().min(5).max(200).optional().trim().messages({
+  address: Joi.string().optional().allow('').trim().messages({
     "string.min": "Address must be at least 5 characters long",
     "string.max": "Address cannot exceed 200 characters",
   }),
@@ -27,18 +27,18 @@ const updateUser = Joi.object({
     "any.required": "User ID is required",
     "string.length": "Invalid User ID length",
   }),
-  fullName: Joi.string().min(2).max(100).optional().trim().messages({
+  fullName: Joi.string().optional().trim().allow('').messages({
     "string.min": "Full name must be at least 2 characters long",
     "string.max": "Full name cannot exceed 100 characters",
   }),
   emailAddress: Joi.string().email().optional().trim().messages({
     "string.email": "Email address must be a valid email",
   }),
-  mobileNumber: Joi.string().min(5).max(20).optional().trim().messages({
+  mobileNumber: Joi.string().optional().allow('').trim().messages({
     "string.min": "Mobile number must be at least 5 characters long",
     "string.max": "Mobile number cannot exceed 20 characters",
   }),
-  address: Joi.string().min(5).max(200).optional().trim().messages({
+  address: Joi.string().optional().allow('').trim().messages({
     "string.min": "Address must be at least 5 characters long",
     "string.max": "Address cannot exceed 200 characters",
   }),

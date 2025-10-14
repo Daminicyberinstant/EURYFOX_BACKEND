@@ -1,5 +1,6 @@
 use euryfoxdb
 
+
 db.createUser({
   user: "euryfoxuser",
   pwd: "euryfox1234",   // choose a strong password
@@ -8,7 +9,8 @@ db.createUser({
   ]
 })
 
-mongosh -u "euryfoxuser" -p "euryfox1234" --authenticationDatabase "euryfoxdb"
+mongosh -u "euryfoxuser" -p "euryfox1234" 
+
 
 
 db.createCollection("product_categories", {

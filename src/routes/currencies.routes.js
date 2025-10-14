@@ -21,3 +21,4 @@ router.get('/getAll', currenciesController.getAll);
 router.delete('/:id', validate(deleteCurrency), currenciesController.remove);
 
 module.exports = router;
+
