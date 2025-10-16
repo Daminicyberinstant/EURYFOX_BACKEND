@@ -279,7 +279,7 @@ function generateOTP() {
   return Math.floor(100000 + Math.random() * 900000);
 }
 const transporter = nodemailer.createTransport({
-  host: 'smtpout.secureserver.net',
+  host: 'smtp.gmail.com',
   port: 465,
   secure: true,
   auth: {
